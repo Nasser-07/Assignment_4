@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!--Tells the browser which version of html to run -->
+<html lang="en"> <!-- indicates the language used to code  -->
+<head>   <!-- head initiates everything that will be used for the programe like css style and title 
+                meta charset defines the charecters being used in an html code utf-8 is a character set-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Welcome Page</title> <!-- Gives the tab a title on the browser-->
+    
+    <!-- beginning to use css by starting to style the website and indicating that Im using CSS to style -->
+    
+    <!-- 
+       style for body  
+        Padding adds some space between the border and the text 
+    Font family assigns fonts to the text in a case where the first font isn't downloaded 
+    color is to assign the text a color 
+    background colour is to assign the colour of the background
+    text-align is to align the text to the left hand side (I dont think I can explain that better )
+    
+    
+    style for navigation 
+    position: fixed  this alligns the placement of the object with respect to the size of the screen or like the view point of the user
+    top 2em is to place the navigation 2em from the top of the screen
+    left 1em is to place the navigation 1em from the left of the screen
+    width 9em is to give the navigation a width of 9em
+    margin 0 is to give the navigation a margin of 0
+    padding 0 is to give the navigation a padding of 0
+    list-style-type none is so that there will be no bullet points for the navigation section
+    the background color is to give the navigation a background color of blue
+    border radius makes the border round and 
+
+    style for items in navigation 
+    text align is to align the text to the center (can be used to align text to the left or right)
+    margin bottom is to give the text a margin of 0.5em (can be used on the top, left, right)
+   
+    style for links in navigation
+    display block is to make the links a block element this means that it will take up the enitre space it is given and other element will be on a new line 
+    color is the same function but with a different color
+    padding is the same but different measurement
+    text decoration being set to none couteracts conventional browsers underlining the links 
+
+    This styles the navigation lists when we hover over it 
+    It changes the color to dark blue when hovered over
+
+    main is to style the <main> section of the website
+        it just adds a margin on the left and aligns it to the left 
+
+
+    footer styles the footer section
+    position absolute is to position the footer at the bottom relative to other elements in the page
+    margin left is to give the footer a margin of 15em from the left
+    padding top is to give the footer a padding of 1em from the top
+    color is to give the footer a color of black
+    bottom is to position the footer at the bottom of the page
+    
+    -->
+
+    <style type='text/css'>
+        body {
+            padding-left:12em; 
+            padding-bottom:10em;
+            font-family: Arial, sans-serif;
+            color: black; 
+            background-color: white; 
+            text-align:center;
+        }   
+
+        ul.navigation {
+            position: fixed;
+            top: 2em;
+            left: 1em;
+            width: 9em;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            background-color: #2196F3; 
+            border-radius: 5px;
+        }
+
+        ul.navigation li {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        ul.navigation li a {
+            display: block;
+            color: #fff; 
+            padding: 0.5em;
+            text-decoration: none;
+        }
+
+        ul.navigation li a:hover {
+            background-color: #00008b;
+        }
+
+        main {
+            margin-left: em;
+            text-align: center;
+        }
+
+        footer {
+            position: absolute
+            margin-left: 15em;
+            padding-top: 1em;
+            color: #black;
+            bottom: 0;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- creates a heading for the document and makes it strong which usualy makes the text bold-->
+<h1><strong>Collecting Student Progress at GIC</strong></h1>
+
+<!-- starts navigation area with a list indside it which is navigation
+    <li> start sadding elemnts to the list and <a is to add the  hyperlink and a text to show instead of it-->
+<nav>
+    <ul class="navigation">
+        <li><a href="Welcome_page.html">Welcome Page</a></li>
+        <li><a href="Info.html">Info Page</a></li>
+        <li><a href="Data_collection.html">Questionnaire</a></li>
+    </ul>
+</nav>
+
+<!-- defines main and starts a paragraph inside it with <br> to break the paragraph into lines-->
+<main>
+    <p>Hello, and welcome to our website.<br>
+         This website aims to collect GIC student data.
+         <br> You will be able to give GIC feedback and provide us with 
+         <br>your grades.</p>
+</main>
+
+<!-- Here I insert an image into the website for design purposes-->
+<img src="Uni_Glasgow_1.jpeg" alt="GIC Logo" width="450" height="320">
+
+<!-- makes a footer with the text page 1 inside of it-->
+<footer>Page 1</footer>
+
+
+</body>
+</html>
