@@ -7,11 +7,21 @@ app = Flask(__name__,template_folder='templates')
 
 # use the decorator pattern to specify the URL(pathway) for the function
 @app.route('/')
-
+@app.route('/Welcome')
 # def index is a function that will return the things that will be seen on the website 
 # for now it is just hellow world
 def index():
-    return render_template('index.html')
+    return render_template('Welcome_page.html')
+
+
+@app.route('/Info')
+def Info():
+    return render_template('Info.html')
+
+@app.route('/Data')
+def Data():
+    return render_template('Data_collection.html')
+
 
 
 # start the development server using the run() method
