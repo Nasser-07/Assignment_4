@@ -1,6 +1,8 @@
 
 # import the Flask class from the flask module
-from flask import Flask , render_template
+from flask import Flask , render_template, send_from_directory
+from flask_wtf import FlaskForm
+
 
 # create the application object
 app = Flask(__name__,template_folder='templates')
@@ -21,6 +23,10 @@ def Info():
 @app.route('/Data')
 def Data():
     return render_template('Data_collection.html')
+
+@app.route('/image')
+def image():
+    return send_from_directory('static','Uni_Glasgow_1.jpeg')
 
 
 
