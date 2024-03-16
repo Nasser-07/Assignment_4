@@ -1,9 +1,9 @@
 
 # import the Flask class from the flask module
-from flask import Flask 
+from flask import Flask , render_template
 
 # create the application object
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 
 # use the decorator pattern to specify the URL(pathway) for the function
 @app.route('/')
@@ -11,7 +11,7 @@ app = Flask(__name__)
 # def index is a function that will return the things that will be seen on the website 
 # for now it is just hellow world
 def index():
-    return '<h1>Hello, World!</h1>' 
+    return render_template('index.html')
 
 
 # start the development server using the run() method
