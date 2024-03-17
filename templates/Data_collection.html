@@ -143,64 +143,45 @@ I also divided the student details and divided their satisfaction and feedback a
 grades-->
 <main>
     <div class="divider"></div>
-    <form method="POST">
-        {{StudentDetail.hidden_tag()}}
+    <form method="POST" action="/Data">
+        {{student_detail.hidden_tag()}}
         <label for="name">Name:</label>
-        {{StudentDetail.name()}} <br>
-        <input type="text" id="name" name="name">
+        {{student_detail.name(class="form-control")}} <br>
 
         <label for="email">Email:</label>
-        {{StudentDetail.email()}} <br>
-        <input type="email" id="email" name="email">
+        {{student_detail.email(class="form-control")}} <br>
 
         <label for="student_number">Student Number:</label>
-        {{studentDetail.student_number()}} <br>
-        <input type="text" id="student_number" name="student_number">
+        {{student_detail.student_number(class="form-control")}} <br>
     
         <div class="divider"></div>
     
         <label for="grade_satisfaction">Grade Satisfaction (1-10):</label>
-        {{SatisfactionForm.satisfaction()}} <br>
-        <input type="number" id="grade_satisfaction" name="grade_satisfaction" min="1" max="10">
+        {{satisfaction_form.satisfaction(class="form-control")}} <br>
+
 
         <label for="suggestions">Any suggestions?</label>
-        {{SatisfactionForm.suggestion()}} <br>
-        <textarea id="suggestions" name="suggestions"></textarea>
+        {{satisfaction_form.suggestion(class="form-control")}} <br>
+
     
         <div class="divider"></div>
     
         <h2>Enter Your Grades</h2>
         <label for="math_grade">Math Grade:</label>
-        {{ GradesForm.math()}} <br>
-        <select id="math_grade" name="math_grade">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="F">F</option>
-        </select>
+        {{ grades_form.math(class="form-control")}} <br>
+
+
+
 
         <label for="English">Science Grade:</label>
-        {{ GradesForm.science()}} <br>
-        <select id="English" name="science_grade">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="F">F</option>
-        </select>
+        {{ grades_form.english(class="form-control")}} <br>
+
 
         <label for="Programming">History Grade:</label>
-        {{ GradesForm.history()}} <br>
-        <select id="Programming" name="history_grade">
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="F">F</option>
-        </select>
+        {{ grades_form.programming(class="form-control")}} <br>
+
    
-        <button type="submit">submit</button>
+        <button type="submit" class="btn btn-primary">submit</button>
     
     </form>
 </main>

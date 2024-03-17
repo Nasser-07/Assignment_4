@@ -4,11 +4,16 @@ from flask import Flask , render_template, send_from_directory
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, Email, NumberRange
+import secrets
 
 
 
 # create the application object
 app = Flask(__name__,template_folder='templates')
+
+app.config['SECRET_KEY'] = secrets.token_hex(16)
+
+print(app.config['SECRET_KEY'])
 
 # use the decorator pattern to specify the URL(pathway) for the function
 @app.route('/')
@@ -34,17 +39,19 @@ class SatisfactionForm(FlaskForm):
 
 class GradesForm(FlaskForm):
     math = SelectField('Math', choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
-    science = SelectField('Science', choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
-    history = SelectField('History', choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
+    english = SelectField('English', choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
+    programming = SelectField('Programming', choices=[('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('F', 'F')])
 
 
 @app.route('/Data', methods=['GET', 'POST'])
 def Data():
-    Student_Detail = StudentDetail()
-    Satisfaction_Form = SatisfactionForm()
-    Grades_Form = GradesForm()
-    if student_detail.validate_on_submit() and satisfaction_form.validate_on_submit() and gra
-    return render_template('Data_collection.html',StudentDetail=StudentDetail, SatisfactionForm=SatisfactionForm, GradesForm=GradesForm)
+    student_detail = StudentDetail()
+    satisfaction_form = SatisfactionForm()
+    grades_form = GradesForm()
+    if student_detail.validate_on_submit() and satisfaction_form.validate_on_submit() and grades_form.validate_on_submit():
+        return 'Form submitted'
+    return render_template('Data_collection.html', student_detail=student_detail, satisfaction_form=satisfaction_form, grades_form=grades_form)
+
 
 
 @app.route('/image')
