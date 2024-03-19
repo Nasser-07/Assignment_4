@@ -144,41 +144,42 @@ grades-->
 <main>
     <div class="divider"></div>
     <form method="POST" action="/Data">
-        {{student_detail.hidden_tag()}}
+        {{csrf_token() }}
+        {{StudentDetail.hidden_tag()}}
         <label for="name">Name:</label>
-        {{student_detail.name(class="form-control")}} <br>
+        {{StudentDetail.name(class="form-control")}} <br>
 
         <label for="email">Email:</label>
-        {{student_detail.email(class="form-control")}} <br>
+        {{StudentDetail.email(class="form-control")}} <br>
 
         <label for="student_number">Student Number:</label>
-        {{student_detail.student_number(class="form-control")}} <br>
+        {{StudentDetail.student_number(class="form-control")}} <br>
     
         <div class="divider"></div>
     
         <label for="grade_satisfaction">Grade Satisfaction (1-10):</label>
-        {{satisfaction_form.satisfaction(class="form-control")}} <br>
+        {{SatisfactionForm.satisfaction(class="form-control")}} <br>
 
 
         <label for="suggestions">Any suggestions?</label>
-        {{satisfaction_form.suggestion(class="form-control")}} <br>
+        {{SatisfactionForm.suggestion(class="form-control")}} <br>
 
     
         <div class="divider"></div>
     
         <h2>Enter Your Grades</h2>
         <label for="math_grade">Math Grade:</label>
-        {{ grades_form.math(class="form-control")}} <br>
+        {{GradesForm.math(class="form-control")}} <br>
 
 
 
 
         <label for="English">Science Grade:</label>
-        {{ grades_form.english(class="form-control")}} <br>
+        {{GradesForm.english(class="form-control")}} <br>
 
 
         <label for="Programming">History Grade:</label>
-        {{ grades_form.programming(class="form-control")}} <br>
+        {{GradesForm.programming(class="form-control")}} <br>
 
    
         <button type="submit" class="btn btn-primary">submit</button>
@@ -192,12 +193,12 @@ grades-->
     <ul class="navigation">
         <li><a href="/Welcome">Welcome Page</a></li>
         <li><a href="/Info">Info Page</a></li>
-        <li><a href="/Data">Questionnaire</a></li>
+        <li><a href="/form">Questionnaire</a></li>
     </ul>
 </nav>
 
 <!-- Here I insert an image into the website for design purposes-->
-<img src="Uni_Glasgow_1.jpeg" alt="GIC Logo" width="450" height="320">
+<img src="/image" alt="GIC Logo" width="450" height="320">
 
 <footer>Page 3</footer>
 
