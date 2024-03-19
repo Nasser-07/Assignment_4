@@ -133,35 +133,47 @@
 <h1><strong>Questionnaire</strong></h1>   <!-- creates a heading for the document and makes it strong which usualy makes the text bold-->
 
 
-<!-- Defines main and inside it a divider inside the divider I define form
-form is basicly how I can ask the use to input anything from MC to written inputs inside thr form
-I define several different labels which will show up on the website to tell the user what they need 
-to input I also use several <input>s to display either a text box or a  number for grade satisfaction
-I set the max to 100 and the minimum to zero to get the users satisfaction out of 100 I use the 'email'
-type for the email input and text for name and student number because they should only be 1 line long 
-I also divided the student details and divided their satisfaction and feedback and divided their 
-grades-->
+<!--NEW COMMENTS: I use jinja2 to use basicly python similar functions with html to 
+combine HTML with the python flask code I start the form with the POST method with the
+action set to data -->
 <main>
     <div class="divider"></div>
     <form method="POST" action="/Data">
+        
+        <!-- Insert the CSRF token for security -->
         {{csrf_token() }}
-        {{StudentDetail.hidden_tag()}}
+        
+        <!-- Insert hidden fields for the StudentDetail form -->
+        {{StudentDetail.hidden_tag()}} 
+        
+        
         <label for="name">Name:</label>
+        
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{StudentDetail.name(class="form-control")}} <br>
 
         <label for="email">Email:</label>
+        
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{StudentDetail.email(class="form-control")}} <br>
 
+
         <label for="student_number">Student Number:</label>
+
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{StudentDetail.student_number(class="form-control")}} <br>
     
         <div class="divider"></div>
     
         <label for="grade_satisfaction">Grade Satisfaction (1-10):</label>
+
+        
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{SatisfactionForm.satisfaction(class="form-control")}} <br>
 
 
         <label for="suggestions">Any suggestions?</label>
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{SatisfactionForm.suggestion(class="form-control")}} <br>
 
     
@@ -169,20 +181,27 @@ grades-->
     
         <h2>Enter Your Grades</h2>
         <label for="math_grade">Math Grade:</label>
+
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{GradesForm.math(class="form-control")}} <br>
 
 
 
 
         <label for="English">Science Grade:</label>
+        
+        <!-- The 'class' argument sets the CSS class of the input field -->
         {{GradesForm.english(class="form-control")}} <br>
 
 
         <label for="Programming">History Grade:</label>
+        
+        
         {{GradesForm.programming(class="form-control")}} <br>
 
    
         <button type="submit" class="btn btn-primary">submit</button>
+        <!-- Submit button for the form -->
     
     </form>
 </main>
@@ -191,7 +210,7 @@ grades-->
     <li> start sadding elemnts to the list and <a is to add the  hyperlink and a text to show instead of it-->
 <nav>
     <ul class="navigation">
-        <li><a href="/Welcome">Welcome Page</a></li>
+        <li><a href="/Welcome">Welcome Page</a></li>    <!-- I changed the webpage link to the /welcome and info and form as I defined them in flask so they can be opened like any other application of a decorator in flask-->
         <li><a href="/Info">Info Page</a></li>
         <li><a href="/form">Questionnaire</a></li>
     </ul>
