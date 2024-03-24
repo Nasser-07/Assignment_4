@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>  <!--Tells the browser which version of html to run -->
 <html lang="en"> <!-- indicates the language used to code  --> 
 <head>      <!-- head initiates everything that will be used for the programe like css style and title 
@@ -141,27 +142,26 @@ action set to data -->
     <form method="POST" action="/Data">
         
         <!-- Insert the CSRF token for security -->
-        {{csrf_token() }}
+        {{ csrf_token() }}
         
         <!-- Insert hidden fields for the StudentDetail form -->
-        {{StudentDetail.hidden_tag()}} 
-        
+        {{ student_detail.hidden_tag() }}
         
         <label for="name">Name:</label>
         
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{StudentDetail.name(class="form-control")}} <br>
+        {{student_detail.name(class="form-control")}} <br>
 
         <label for="email">Email:</label>
         
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{StudentDetail.email(class="form-control")}} <br>
+        {{student_detail.email(class="form-control")}} <br>
 
 
         <label for="student_number">Student Number:</label>
 
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{StudentDetail.student_number(class="form-control")}} <br>
+        {{student_detail.student_number(class="form-control")}} <br>
     
         <div class="divider"></div>
     
@@ -169,12 +169,12 @@ action set to data -->
 
         
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{SatisfactionForm.satisfaction(class="form-control")}} <br>
+        {{satisfaction_form.satisfaction(class="form-control")}} <br>
 
 
         <label for="suggestions">Any suggestions?</label>
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{SatisfactionForm.suggestion(class="form-control")}} <br>
+        {{satisfaction_form.suggestion(class="form-control")}} <br>
 
     
         <div class="divider"></div>
@@ -183,7 +183,7 @@ action set to data -->
         <label for="math_grade">Math Grade:</label>
 
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{GradesForm.math(class="form-control")}} <br>
+        {{ grades_form.math(class="form-control")}} <br>
 
 
 
@@ -191,13 +191,13 @@ action set to data -->
         <label for="English">Science Grade:</label>
         
         <!-- The 'class' argument sets the CSS class of the input field -->
-        {{GradesForm.english(class="form-control")}} <br>
+        {{ grades_form.english(class="form-control")}} <br>
 
 
         <label for="Programming">History Grade:</label>
         
         
-        {{GradesForm.programming(class="form-control")}} <br>
+        {{ grades_form.programming(class="form-control")}} <br>
 
    
         <button type="submit" class="btn btn-primary">submit</button>
