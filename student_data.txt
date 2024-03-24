@@ -1,1 +1,3 @@
-Name: raheed, Email: 12027055361, Student Number: P435721, Satisfaction: 1, Suggestion: GIC sucks, Math Grade: A, English Grade: A, Programming Grade: A
+Name: weuy, Email: ewyurg, Student Number: ewyrg, Satisfaction: 1, Suggestion: ewyurg, Math Grade: A, English Grade: A, Programming Grade: A
+Name: Nasser, Email: 12027055361, Student Number: p69420, Satisfaction: 1, Suggestion: yes so many , Math Grade: A, English Grade: A, Programming Grade: A
+Name: raheed, Email: 2027055361, Student Number: P435721, Satisfaction: 1, Suggestion: too many to count, Math Grade: A, English Grade: A, Programming Grade: A
